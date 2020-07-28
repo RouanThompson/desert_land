@@ -1,0 +1,12 @@
+<h4><%= link_to "Create Order", new_order_path %></h4>
+
+<h1>Browse Items by Category</h1>
+
+<%Category.all.each do |category|%>
+    <h2><%= link_to category.name, category %></h2>
+    <ul>
+    <%category.items.each do |item|%>
+        <h3><li><%= link_to item.name, item %></li></h3>
+    <%end%> 
+    </ul>
+<%end%>

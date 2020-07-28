@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Customer.destroy_all
+Category.destroy_all
+Item.destroy_all
+ 
+Customer.create(name: 'Maria')
+Customer.create(name: 'Rouan')
+ 
+Category.create(name: 'Cakes')
+Category.create(name: 'Cookies')
+ 
+Item.create(name: 'Chocolate cake', category: Category.first)
+Item.create(name: 'Cheesecake', category: Category.first)
+Item.create(name: 'Chocolate Chip Cookie', category: Category.last)
+
+puts 'Done seeding!'

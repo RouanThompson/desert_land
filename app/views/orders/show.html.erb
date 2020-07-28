@@ -1,0 +1,16 @@
+<h4><%= link_to "Back To Homepage", items_path %></h4>
+<h4><%= link_to "View Orders", orders_path %></h4>
+
+<h1>Order No: <%=@order.number%></h1>
+
+<h2>Customer: <%=@order.customer.name%></h2>
+
+<h2Items Ordered:</h2>
+<ul>
+<%@order.order_items.each do |order_item|%>
+   <h3><li><%=order_item.item.name%></li></h3>
+<%end%>
+</ul>
+
+<h4><%=link_to "Update Order", edit_order_path%></h4>
+<%=button_to "Delete Order", order_path, method: :delete%>

@@ -1,0 +1,9 @@
+<h4><%= link_to "Back To Homepage", items_path %></h4>
+<h4><%= link_to "Create Order", new_order_path %></h4>
+
+<h2>List of Orders: </h2>
+<ul>
+<%@orders.each do |order|%>
+    <li><%=link_to order.number, order%></li>
+<%end%>
+</ul>

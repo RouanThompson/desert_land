@@ -1,0 +1,12 @@
+<h4><%= link_to "Back To Homepage", items_path %></h4>
+<h4><%= link_to "View Orders", orders_path %></h4>
+
+<%= form_with model:@order do |f| %>
+    <%= hidden_field(:order, :number) %>
+    <h1>Customer: <%= f.collection_select :customer_id, Customer.all, :id, :name, prompt: true%></h1>
+    <%Category.all.each do |category|%>
+        <h2>Category: <%= category.name %></h2>
+        <h3>Items: <%= f.collection_check_boxes :item_ids, category.items, :id, :name %></h3>
+    <% end %>
+    <%= f.submit "Update Order"%>
+<% end %>
