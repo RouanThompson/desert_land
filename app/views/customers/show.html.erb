@@ -1,0 +1,14 @@
+<div class="user">
+    <header class="user__header">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+        <h1 class="user__title">Your page</h1>
+    </header>
+</div>
+
+<h1><%= "Welcome #{@customer.name}"%></h1>
+<h2><%= link_to "logout", "/logout", method: :delete%></h2>
+
+<ul>
+    <li>show a list of all orders</li>
+    <li>each order should be a link to a specific order</li>
+</ul>
