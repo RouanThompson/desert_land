@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DesertLand</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  </head>
+    <%if @current_customer%>
+      <div class="form">
+        <p style="text-align:right;">
+          <%= link_to "Dessert Categories", items_path, class: "link" %> |---|
+          <%= link_to "View Orders", orders_path, class: "link" %> |---|
+          <%= link_to "Create Order", new_order_path, class: "link" %> |---|
+          <%= link_to "logout", "/logout", method: :delete, class: "link"%> |---|
+        </p>
+      </div>
+    <%end%>
+  <body>
+    <%= yield %>
+  </body>
+</html>

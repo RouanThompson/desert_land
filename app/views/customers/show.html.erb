@@ -1,0 +1,29 @@
+
+    <%if @current_customer%>
+
+        <div class="form">
+            <br>
+            <br>
+            <br>
+            <h1>Welcome <%= @current_customer.name%></h1>
+            <p><%= link_to "Dessert Categories", "/items", class: "link"%></p>
+            <p><%= link_to "My orders", "/orders", class: "link"%></p>
+            <p><%= link_to "logout", "/logout", method: :delete, class: "link"%></p>
+        </div>
+
+
+    <%else%>
+
+        <div class="form">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <p><%= link_to "New around here? Sign Up", signup_path, class: "link"%></p>
+            <p>Or</p>
+            <p><%= link_to "Returning Customer? Login", login_path, class: "link"%></p>
+        </div>
+        
+    <%end%>

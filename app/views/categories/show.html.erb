@@ -1,0 +1,11 @@
+<div class="form">
+
+    <p><%=@category.name%></p>
+
+    <h3></h3>
+    
+    <%@category.items.each do |item|%>
+        <p><%=link_to item.name, item, class: "link" %></p>
+    <%end%>
+    
+</div>

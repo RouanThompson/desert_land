@@ -1,0 +1,13 @@
+<!--Order Update Form-->
+
+<div class="form">
+
+    <%= form_with model:@order do |f| %>
+        <%= f.hidden_field :number, :value => Time.now %>
+        <%Category.all.each do |category|%>
+            <p><%= category.name %></p>
+            <p><%= f.collection_check_boxes :item_ids, category.items, :id, :name %></p>
+        <% end %>
+        <%= f.submit "Update Order"%>
+    <% end %>
+</div>

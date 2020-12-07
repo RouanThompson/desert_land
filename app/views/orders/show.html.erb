@@ -1,0 +1,16 @@
+<!--Order Show Page-->
+<div class="form">
+
+   <p>Order No: <%=@order.number%></p>
+   <p style="color:pink;">Customer: <%=@order.customer.name%></p>
+
+   <%@order.order_items.each do |order_item|%>
+      <p><%=order_item.item.name%><br>
+      <div style="color:orange">Price: $<%=order_item.item.price%></p></div>
+   <%end%>
+
+   <p>Total Price: $<%=@order.total_price%></p>
+
+   <p><%=link_to "Update Order", edit_order_path, class: "link"%></p>
+   <%=button_to "Delete Order", order_path, method: :delete%>
+</div>

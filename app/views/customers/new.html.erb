@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <div>
+        <header>
+            <h1 class="user__title", style="color:pink;text-align:center;">Sign Up</h1>
+        </header>
+        
+        <div>
+            <%if @errors%>
+                <% @errors.each do |error|%>
+                    <p style="color:red;text-align:right;"><%= error %></p>
+                <% end %>
+            <% end %>
+        </div>
+        <%= form_for @customer do |f|%>
+            <div class="signup">
+                <%= f.label :name%>:
+                <p><%= f.text_field :name%>
+
+                <p><%= f.label :username%>:</p>
+                <p><%= f.text_field :username%></p>
+
+                <p><%= f.label :password%>:</p>
+                <p><%= f.text_field :password%></p>
+
+                <p><%= f.submit "Create Account", class: "button"%></p>
+                <p><%= link_to "Returning Customer? Login", login_path, class: "link"%></p>
+            </div>
+        <% end %>
+    </div>
+</html>

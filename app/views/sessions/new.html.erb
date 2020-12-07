@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <div class="user">
+        <header class="user__header">
+            <%# <img class="logo" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" /> %>
+            <h1 class="user__title", style="color:pink;text-align:center;">Login</h1>
+        </header>
+        
+        <br>
+        <br>
+        <br>
+        <%= form_with scope: :session, url: '/login', html: {class: "form"} do |f|%>
+            <div class="login">
+    
+                <p><%= f.label :username%>:</p>
+                <p><%= f.text_field :username%><br></p>
+
+                <p><%= f.label :password%>:</p>
+                <p><%= f.text_field :password%><br></p>
+
+                <p><%= f.submit "Login" %></p>
+                <p><%= link_to "New around here? Sign Up", signup_path, class: "link"%></p>
+            </div>
+            <%if @errors%>
+                <% @errors.each do |error|%>
+                    <p style="color:red;"><%= error %></p>
+                <% end %>
+            <% end %>
+        <% end %>
+    </div>
+</html>
